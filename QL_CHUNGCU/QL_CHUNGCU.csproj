@@ -82,6 +82,12 @@
     <Compile Include="FrmCuDan.Designer.cs">
       <DependentUpon>FrmCuDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLichSuCuTru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLichSuCuTru.Designer.cs">
+      <DependentUpon>FrmLichSuCuTru.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOADON.cs">
       <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
     </Compile>
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCuDan.resx">
       <DependentUpon>FrmCuDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLichSuCuTru.resx">
+      <DependentUpon>FrmLichSuCuTru.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
