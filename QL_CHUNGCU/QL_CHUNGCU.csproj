@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +48,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CANHO.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CT_HOADON.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CU_DAN.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DICHVU.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOADON.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOPDONG.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LICH_SU_CANHO.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NGUOI_O.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHANVIEN.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QL_CHUNGCU.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_CHUNGCU.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QL_CHUNGCU.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QL_CHUNGCU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_CHUNGCU.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SUCO.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SU_DUNG_DV.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAIKHOAN.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="THANH_TOAN.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XE.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,9 +131,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="QL_CHUNGCU.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QL_CHUNGCU.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QL_CHUNGCU.edmx.diagram">
+      <DependentUpon>QL_CHUNGCU.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QL_CHUNGCU.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QL_CHUNGCU.edmx</DependentUpon>
+      <LastGenOutput>QL_CHUNGCU.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QL_CHUNGCU.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QL_CHUNGCU.edmx</DependentUpon>
+      <LastGenOutput>QL_CHUNGCU.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
