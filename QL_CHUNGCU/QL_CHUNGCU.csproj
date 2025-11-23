@@ -76,6 +76,12 @@
     <Compile Include="FrmCanHo.Designer.cs">
       <DependentUpon>FrmCanHo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmChuyenCanHo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChuyenCanHo.Designer.cs">
+      <DependentUpon>FrmChuyenCanHo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCuDan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="FrmLichSuCuTru.Designer.cs">
       <DependentUpon>FrmLichSuCuTru.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLichSuHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLichSuHopDong.Designer.cs">
+      <DependentUpon>FrmLichSuHopDong.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNguoiO.cs">
       <SubType>Form</SubType>
@@ -160,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLichSuCuTru.resx">
       <DependentUpon>FrmLichSuCuTru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLichSuHopDong.resx">
+      <DependentUpon>FrmLichSuHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNguoiO.resx">
       <DependentUpon>FrmNguoiO.cs</DependentUpon>
