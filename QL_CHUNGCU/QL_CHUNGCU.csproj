@@ -94,6 +94,12 @@
     <Compile Include="FrmHopDong.Designer.cs">
       <DependentUpon>FrmHopDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLichSuChuyenCanHo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLichSuChuyenCanHo.Designer.cs">
+      <DependentUpon>FrmLichSuChuyenCanHo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLichSuCuTru.cs">
       <SubType>Form</SubType>
     </Compile>

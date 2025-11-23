@@ -16,7 +16,7 @@ namespace QL_CHUNGCU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLichSuHopDong());
+            Application.Run(new FrmLichSuChuyenCanHo());
         }
     }
 }
