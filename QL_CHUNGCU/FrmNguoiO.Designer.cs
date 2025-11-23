@@ -273,6 +273,8 @@
             // 
             // cboMaCanHo
             // 
+            this.cboMaCanHo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cboMaCanHo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaCanHo.FormattingEnabled = true;
             this.cboMaCanHo.Location = new System.Drawing.Point(130, 55);
@@ -282,6 +284,8 @@
             // 
             // dtpNgaySinh
             // 
+            this.dtpNgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySinh.Location = new System.Drawing.Point(130, 115);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
@@ -308,6 +312,8 @@
             // 
             // txtHoTen
             // 
+            this.txtHoTen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHoTen.Location = new System.Drawing.Point(130, 85);
             this.txtHoTen.MaxLength = 100;
             this.txtHoTen.Name = "txtHoTen";
@@ -316,6 +322,8 @@
             // 
             // txtMaNguoiO
             // 
+            this.txtMaNguoiO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaNguoiO.Location = new System.Drawing.Point(130, 25);
             this.txtMaNguoiO.MaxLength = 10;
             this.txtMaNguoiO.Name = "txtMaNguoiO";
