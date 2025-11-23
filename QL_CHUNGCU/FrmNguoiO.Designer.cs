@@ -38,14 +38,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboMaCanHo = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.cboMaCanHo = new System.Windows.Forms.ComboBox();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.txtQuanHe = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
@@ -66,15 +65,17 @@
             // 
             // panelMain
             // 
+            this.panelMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelMain.AutoScroll = true;
             this.panelMain.Controls.Add(this.groupBox4);
             this.panelMain.Controls.Add(this.groupBox3);
             this.panelMain.Controls.Add(this.groupBox2);
             this.panelMain.Controls.Add(this.groupBox1);
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Location = new System.Drawing.Point(12, 12);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(800, 612);
+            this.panelMain.Size = new System.Drawing.Size(776, 588);
             this.panelMain.TabIndex = 0;
             // 
             // groupBox4
@@ -85,7 +86,7 @@
             this.groupBox4.Controls.Add(this.dgvNguoiO);
             this.groupBox4.Location = new System.Drawing.Point(3, 308);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(794, 301);
+            this.groupBox4.Size = new System.Drawing.Size(770, 277);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách người ở";
@@ -105,7 +106,7 @@
             this.dgvNguoiO.ReadOnly = true;
             this.dgvNguoiO.RowHeadersWidth = 51;
             this.dgvNguoiO.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNguoiO.Size = new System.Drawing.Size(782, 274);
+            this.dgvNguoiO.Size = new System.Drawing.Size(758, 250);
             this.dgvNguoiO.TabIndex = 0;
             this.dgvNguoiO.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNguoiO_CellClick);
             // 
@@ -120,15 +121,15 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Location = new System.Drawing.Point(3, 232);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(794, 70);
+            this.groupBox3.Size = new System.Drawing.Size(770, 70);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm kiếm";
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnTimKiem.Location = new System.Drawing.Point(658, 22);
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTimKiem.Location = new System.Drawing.Point(634, 22);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(130, 35);
             this.btnTimKiem.TabIndex = 14;
@@ -138,15 +139,15 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTimKiem.Location = new System.Drawing.Point(350, 28);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(274, 22);
+            this.txtTimKiem.Size = new System.Drawing.Size(250, 22);
             this.txtTimKiem.TabIndex = 13;
             // 
             // cboTimKiem
             // 
-            this.cboTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboTimKiem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTimKiem.FormattingEnabled = true;
             this.cboTimKiem.Items.AddRange(new object[] {
@@ -159,7 +160,6 @@
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(270, 31);
             this.label8.Name = "label8";
@@ -169,7 +169,6 @@
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(20, 31);
             this.label7.Name = "label7";
@@ -181,32 +180,19 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.btnThoat);
             this.groupBox2.Controls.Add(this.btnLamMoi);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Location = new System.Drawing.Point(3, 156);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(794, 70);
+            this.groupBox2.Size = new System.Drawing.Size(770, 70);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThoat.Location = new System.Drawing.Point(658, 25);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(130, 35);
-            this.btnThoat.TabIndex = 11;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnLamMoi.Location = new System.Drawing.Point(477, 25);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(130, 35);
@@ -217,7 +203,6 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoa.Location = new System.Drawing.Point(324, 25);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(130, 35);
@@ -228,7 +213,6 @@
             // 
             // btnSua
             // 
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSua.Location = new System.Drawing.Point(171, 25);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(130, 35);
@@ -239,7 +223,6 @@
             // 
             // btnThem
             // 
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThem.Location = new System.Drawing.Point(18, 25);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(130, 35);
@@ -252,8 +235,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cboMaCanHo);
             this.groupBox1.Controls.Add(this.dtpNgaySinh);
+            this.groupBox1.Controls.Add(this.cboMaCanHo);
             this.groupBox1.Controls.Add(this.txtCCCD);
             this.groupBox1.Controls.Add(this.txtQuanHe);
             this.groupBox1.Controls.Add(this.txtHoTen);
@@ -266,10 +249,18 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(794, 147);
+            this.groupBox1.Size = new System.Drawing.Size(770, 147);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin người ở";
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(130, 115);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(250, 22);
+            this.dtpNgaySinh.TabIndex = 4;
             // 
             // cboMaCanHo
             // 
@@ -282,20 +273,10 @@
             this.cboMaCanHo.Size = new System.Drawing.Size(250, 24);
             this.cboMaCanHo.TabIndex = 2;
             // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(130, 115);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(250, 22);
-            this.dtpNgaySinh.TabIndex = 4;
-            // 
             // txtCCCD
             // 
             this.txtCCCD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCCCD.Location = new System.Drawing.Point(534, 85);
+            this.txtCCCD.Location = new System.Drawing.Point(510, 85);
             this.txtCCCD.MaxLength = 12;
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(250, 22);
@@ -304,7 +285,7 @@
             // txtQuanHe
             // 
             this.txtQuanHe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtQuanHe.Location = new System.Drawing.Point(534, 55);
+            this.txtQuanHe.Location = new System.Drawing.Point(510, 55);
             this.txtQuanHe.MaxLength = 50;
             this.txtQuanHe.Name = "txtQuanHe";
             this.txtQuanHe.Size = new System.Drawing.Size(250, 22);
@@ -312,8 +293,6 @@
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHoTen.Location = new System.Drawing.Point(130, 85);
             this.txtHoTen.MaxLength = 100;
             this.txtHoTen.Name = "txtHoTen";
@@ -322,8 +301,6 @@
             // 
             // txtMaNguoiO
             // 
-            this.txtMaNguoiO.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaNguoiO.Location = new System.Drawing.Point(130, 25);
             this.txtMaNguoiO.MaxLength = 10;
             this.txtMaNguoiO.Name = "txtMaNguoiO";
@@ -334,7 +311,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(444, 88);
+            this.label6.Location = new System.Drawing.Point(420, 88);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 0;
@@ -344,7 +321,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(444, 58);
+            this.label5.Location = new System.Drawing.Point(420, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 16);
             this.label5.TabIndex = 0;
@@ -413,9 +390,22 @@
         #endregion
 
         private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dgvNguoiO;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.ComboBox cboTimKiem;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboMaCanHo;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        private System.Windows.Forms.ComboBox cboMaCanHo;
         private System.Windows.Forms.TextBox txtCCCD;
         private System.Windows.Forms.TextBox txtQuanHe;
         private System.Windows.Forms.TextBox txtHoTen;
@@ -426,19 +416,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnLamMoi;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.ComboBox cboTimKiem;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dgvNguoiO;
     }
 }

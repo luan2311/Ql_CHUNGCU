@@ -455,12 +455,6 @@ namespace QL_CHUNGCU
             }
         }
 
-        // Thoát
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         // Click vào DataGridView
         private void dgvNguoiO_CellClick(object sender, DataGridViewCellEventArgs e)
         {

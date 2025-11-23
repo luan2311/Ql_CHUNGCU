@@ -113,48 +113,37 @@ namespace QL_CHUNGCU
         {
             if (dgvHopDong.Columns.Count > 0)
             {
-                //int fixedWidth = 80 + 80 + 80 + 120 + 70 + 90 + 90 + 110;
-
-                dgvHopDong.Columns["MaHDong"].HeaderText = "Mã HĐ";
+                dgvHopDong.Columns["MaHDong"].HeaderText = "Mã hợp đồng";
                 dgvHopDong.Columns["MaHDong"].Width = 80;
-                dgvHopDong.Columns["MaHDong"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                dgvHopDong.Columns["MaCanHo"].HeaderText = "Căn hộ";
+                dgvHopDong.Columns["MaCanHo"].HeaderText = "Mã căn hộ";
                 dgvHopDong.Columns["MaCanHo"].Width = 80;
-                dgvHopDong.Columns["MaCanHo"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                dgvHopDong.Columns["MaCD"].HeaderText = "Mã CD";
+                dgvHopDong.Columns["MaCD"].HeaderText = "Mã cư dân";
                 dgvHopDong.Columns["MaCD"].Width = 80;
-                dgvHopDong.Columns["MaCD"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
                 dgvHopDong.Columns["TenCuDan"].HeaderText = "Tên cư dân";
-                dgvHopDong.Columns["TenCuDan"].Width = 140;
-                dgvHopDong.Columns["TenCuDan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvHopDong.Columns["TenCuDan"].Width = 150;
 
                 dgvHopDong.Columns["LoaiHopDong"].HeaderText = "Loại";
-                dgvHopDong.Columns["LoaiHopDong"].Width = 70;
-                dgvHopDong.Columns["LoaiHopDong"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvHopDong.Columns["LoaiHopDong"].Width = 80;
 
                 dgvHopDong.Columns["NgayKy"].HeaderText = "Ngày ký";
-                dgvHopDong.Columns["NgayKy"].Width = 90;
+                dgvHopDong.Columns["NgayKy"].Width = 80;
                 dgvHopDong.Columns["NgayKy"].DefaultCellStyle.Format = "dd/MM/yyyy";
-                dgvHopDong.Columns["NgayKy"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                dgvHopDong.Columns["NgayHetHan"].HeaderText = "Hết hạn";
-                dgvHopDong.Columns["NgayHetHan"].Width = 90;
+                dgvHopDong.Columns["NgayHetHan"].HeaderText = "Ngày hết hạn";
+                dgvHopDong.Columns["NgayHetHan"].Width = 80;
                 dgvHopDong.Columns["NgayHetHan"].DefaultCellStyle.Format = "dd/MM/yyyy";
-                dgvHopDong.Columns["NgayHetHan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                dgvHopDong.Columns["GiaTriHopDong"].HeaderText = "Giá trị";
-                dgvHopDong.Columns["GiaTriHopDong"].Width = 90;
+                dgvHopDong.Columns["GiaTriHopDong"].HeaderText = "Giá trị (VNĐ)";
+                dgvHopDong.Columns["GiaTriHopDong"].Width = 100;
                 dgvHopDong.Columns["GiaTriHopDong"].DefaultCellStyle.Format = "N0";
                 dgvHopDong.Columns["GiaTriHopDong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dgvHopDong.Columns["GiaTriHopDong"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
 
-                // Cột cuối cùng sẽ Fill phần còn lại
+                // Cột cuối cùng tự động Fill - GIỐNG FrmNguoiO
                 dgvHopDong.Columns["TrangThai"].HeaderText = "Trạng thái";
                 dgvHopDong.Columns["TrangThai"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgvHopDong.Columns["TrangThai"].MinimumWidth = 90;
             }
         }
 
