@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QL_CHUNGCUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QL_CHUNGCUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CANHO">
           <Key>
             <PropertyRef Name="MaCanHo" />
@@ -87,6 +87,16 @@
           <Property Name="MaHDongCu" Type="char" MaxLength="10" />
           <Property Name="MaHDongMoi" Type="char" MaxLength="10" />
           <Property Name="NgayChuyen" Type="date" />
+          <Property Name="GhiChu" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="LICH_SU_SUCO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaSC" Type="char" MaxLength="10" />
+          <Property Name="MaNV" Type="char" MaxLength="10" />
+          <Property Name="NgayHoanThanh" Type="datetime" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="NGUOI_O">
@@ -237,6 +247,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__LICH_SU_SU__MaNV__440B1D61">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="LICH_SU_SUCO" Type="Self.LICH_SU_SUCO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="LICH_SU_SUCO">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICH_SU_SU__MaSC__4316F928">
+          <End Role="SUCO" Type="Self.SUCO" Multiplicity="0..1" />
+          <End Role="LICH_SU_SUCO" Type="Self.LICH_SU_SUCO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCO">
+              <PropertyRef Name="MaSC" />
+            </Principal>
+            <Dependent Role="LICH_SU_SUCO">
+              <PropertyRef Name="MaSC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__NGUOI_O__MaCanHo__37A5467C">
           <End Role="CANHO" Type="Self.CANHO" Multiplicity="0..1" />
           <End Role="NGUOI_O" Type="Self.NGUOI_O" Multiplicity="*" />
@@ -334,37 +368,49 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="crs_KiemTraTheXeHetHan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        <Function Name="fn_DoanhThuTheoThang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="decimal">
+          <Parameter Name="Thang" Type="int" Mode="In" />
+          <Parameter Name="Nam" Type="int" Mode="In" />
         </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        <Function Name="fn_ThongKeSuCoTheoNhanVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="MaNV" Type="char" Mode="In" />
+          <Parameter Name="Thang" Type="int" Mode="In" />
+          <Parameter Name="Nam" Type="int" Mode="In" />
         </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
+        <Function Name="fn_TinhThoiHanHopDong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="MaHDong" Type="char" Mode="In" />
         </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
+        <Function Name="sp_CapNhatTrangThaiHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_ChuyenCanHo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaCD" Type="char" Mode="In" />
+          <Parameter Name="MaCanHoMoi" Type="char" Mode="In" />
+          <Parameter Name="LoaiHopDongMoi" Type="nvarchar" Mode="In" />
+          <Parameter Name="GiaTriHopDongMoi" Type="decimal" Mode="In" />
+          <Parameter Name="GhiChu" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
+        <Function Name="sp_GhiNhanSuCo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaCanHo" Type="char" Mode="In" />
+          <Parameter Name="MoTa" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        <Function Name="sp_TangGiaTriHopDongBangCursor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_TaoHoaDonMoi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHD" Type="char" Mode="In" />
+          <Parameter Name="MaHDong" Type="char" Mode="In" />
+          <Parameter Name="NgayLap" Type="date" Mode="In" />
+          <Parameter Name="Thang" Type="char" Mode="In" />
         </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_ThemCuDanVaoCanHo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaCD" Type="char" Mode="In" />
+          <Parameter Name="HoTen" Type="nvarchar" Mode="In" />
+          <Parameter Name="NgaySinh" Type="date" Mode="In" />
+          <Parameter Name="GioiTinh" Type="nvarchar" Mode="In" />
+          <Parameter Name="SDT" Type="varchar" Mode="In" />
+          <Parameter Name="CCCD" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="MaCanHo" Type="char" Mode="In" />
+          <Parameter Name="LoaiHopDong" Type="nvarchar" Mode="In" />
+          <Parameter Name="GiaTriHopDong" Type="decimal" Mode="In" />
+        </Function>
         <EntityContainer Name="QL_CHUNGCUModelStoreContainer">
           <EntitySet Name="CANHO" EntityType="Self.CANHO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CT_HOADON" EntityType="Self.CT_HOADON" Schema="dbo" store:Type="Tables" />
@@ -373,6 +419,7 @@
           <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HOPDONG" EntityType="Self.HOPDONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LICH_SU_CANHO" EntityType="Self.LICH_SU_CANHO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LICH_SU_SUCO" EntityType="Self.LICH_SU_SUCO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NGUOI_O" EntityType="Self.NGUOI_O" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SU_DUNG_DV" EntityType="Self.SU_DUNG_DV" Schema="dbo" store:Type="Tables" />
@@ -403,6 +450,14 @@
           <AssociationSet Name="FK__LICH_SU_CA__MaCD__2D27B809" Association="Self.FK__LICH_SU_CA__MaCD__2D27B809">
             <End Role="CU_DAN" EntitySet="CU_DAN" />
             <End Role="LICH_SU_CANHO" EntitySet="LICH_SU_CANHO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICH_SU_SU__MaNV__440B1D61" Association="Self.FK__LICH_SU_SU__MaNV__440B1D61">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="LICH_SU_SUCO" EntitySet="LICH_SU_SUCO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICH_SU_SU__MaSC__4316F928" Association="Self.FK__LICH_SU_SU__MaSC__4316F928">
+            <End Role="SUCO" EntitySet="SUCO" />
+            <End Role="LICH_SU_SUCO" EntitySet="LICH_SU_SUCO" />
           </AssociationSet>
           <AssociationSet Name="FK__NGUOI_O__MaCanHo__37A5467C" Association="Self.FK__NGUOI_O__MaCanHo__37A5467C">
             <End Role="CANHO" EntitySet="CANHO" />
@@ -437,8 +492,7 @@
             <End Role="XE" EntitySet="XE" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QL_CHUNGCUModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -544,6 +598,18 @@
           <Property Name="GhiChu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CU_DAN" Relationship="Self.FK__LICH_SU_CA__MaCD__2D27B809" FromRole="LICH_SU_CANHO" ToRole="CU_DAN" />
         </EntityType>
+        <EntityType Name="LICH_SU_SUCO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaSC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="NgayHoanThanh" Type="DateTime" Precision="3" />
+          <Property Name="GhiChu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHANVIEN" Relationship="Self.FK__LICH_SU_SU__MaNV__440B1D61" FromRole="LICH_SU_SUCO" ToRole="NHANVIEN" />
+          <NavigationProperty Name="SUCO" Relationship="Self.FK__LICH_SU_SU__MaSC__4316F928" FromRole="LICH_SU_SUCO" ToRole="SUCO" />
+        </EntityType>
         <EntityType Name="NGUOI_O">
           <Key>
             <PropertyRef Name="MaNguoiO" />
@@ -567,6 +633,7 @@
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="Luong" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="LICH_SU_SUCO" Relationship="Self.FK__LICH_SU_SU__MaNV__440B1D61" FromRole="NHANVIEN" ToRole="LICH_SU_SUCO" />
           <NavigationProperty Name="SUCOes" Relationship="Self.FK__SUCO__MaNV__2A4B4B5E" FromRole="NHANVIEN" ToRole="SUCO" />
           <NavigationProperty Name="THANH_TOAN" Relationship="Self.FK__THANH_TOA__Nguoi__34C8D9D1" FromRole="NHANVIEN" ToRole="THANH_TOAN" />
         </EntityType>
@@ -594,6 +661,7 @@
           <Property Name="NgayBao" Type="DateTime" Precision="0" />
           <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CANHO" Relationship="Self.FK__SUCO__MaCanHo__29572725" FromRole="SUCO" ToRole="CANHO" />
+          <NavigationProperty Name="LICH_SU_SUCO" Relationship="Self.FK__LICH_SU_SU__MaSC__4316F928" FromRole="SUCO" ToRole="LICH_SU_SUCO" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.FK__SUCO__MaNV__2A4B4B5E" FromRole="SUCO" ToRole="NHANVIEN" />
         </EntityType>
         <EntityType Name="TAIKHOAN">
@@ -774,6 +842,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__LICH_SU_SU__MaNV__440B1D61">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="LICH_SU_SUCO" Type="Self.LICH_SU_SUCO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaNV" />
+            </Principal>
+            <Dependent Role="LICH_SU_SUCO">
+              <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICH_SU_SU__MaSC__4316F928">
+          <End Role="SUCO" Type="Self.SUCO" Multiplicity="0..1" />
+          <End Role="LICH_SU_SUCO" Type="Self.LICH_SU_SUCO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUCO">
+              <PropertyRef Name="MaSC" />
+            </Principal>
+            <Dependent Role="LICH_SU_SUCO">
+              <PropertyRef Name="MaSC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__SUCO__MaNV__2A4B4B5E">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="SUCO" Type="Self.SUCO" Multiplicity="*" />
@@ -806,6 +898,7 @@
           <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
           <EntitySet Name="HOPDONGs" EntityType="Self.HOPDONG" />
           <EntitySet Name="LICH_SU_CANHO" EntityType="Self.LICH_SU_CANHO" />
+          <EntitySet Name="LICH_SU_SUCO" EntityType="Self.LICH_SU_SUCO" />
           <EntitySet Name="NGUOI_O" EntityType="Self.NGUOI_O" />
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
           <EntitySet Name="SU_DUNG_DV" EntityType="Self.SU_DUNG_DV" />
@@ -861,6 +954,14 @@
             <End Role="HOADON" EntitySet="HOADONs" />
             <End Role="THANH_TOAN" EntitySet="THANH_TOAN" />
           </AssociationSet>
+          <AssociationSet Name="FK__LICH_SU_SU__MaNV__440B1D61" Association="Self.FK__LICH_SU_SU__MaNV__440B1D61">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="LICH_SU_SUCO" EntitySet="LICH_SU_SUCO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICH_SU_SU__MaSC__4316F928" Association="Self.FK__LICH_SU_SU__MaSC__4316F928">
+            <End Role="SUCO" EntitySet="SUCOes" />
+            <End Role="LICH_SU_SUCO" EntitySet="LICH_SU_SUCO" />
+          </AssociationSet>
           <AssociationSet Name="FK__SUCO__MaNV__2A4B4B5E" Association="Self.FK__SUCO__MaNV__2A4B4B5E">
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="SUCO" EntitySet="SUCOes" />
@@ -870,47 +971,41 @@
             <End Role="THANH_TOAN" EntitySet="THANH_TOAN" />
           </AssociationSet>
           <FunctionImport Name="crs_KiemTraTheXeHetHan" />
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
+          <FunctionImport Name="sp_CapNhatTrangThaiHoaDon" />
+          <FunctionImport Name="sp_ChuyenCanHo">
+            <Parameter Name="MaCD" Mode="In" Type="String" />
+            <Parameter Name="MaCanHoMoi" Mode="In" Type="String" />
+            <Parameter Name="LoaiHopDongMoi" Mode="In" Type="String" />
+            <Parameter Name="GiaTriHopDongMoi" Mode="In" Type="Decimal" />
+            <Parameter Name="GhiChu" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
+          <FunctionImport Name="sp_GhiNhanSuCo">
+            <Parameter Name="MaCanHo" Mode="In" Type="String" />
+            <Parameter Name="MoTa" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          <FunctionImport Name="sp_TangGiaTriHopDongBangCursor" />
+          <FunctionImport Name="sp_TaoHoaDonMoi" ReturnType="Collection(QL_CHUNGCUModel.sp_TaoHoaDonMoi_Result)">
+            <Parameter Name="MaHD" Mode="In" Type="String" />
+            <Parameter Name="MaHDong" Mode="In" Type="String" />
+            <Parameter Name="NgayLap" Mode="In" Type="DateTime" />
+            <Parameter Name="Thang" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QL_CHUNGCUModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          <FunctionImport Name="sp_ThemCuDanVaoCanHo">
+            <Parameter Name="MaCD" Mode="In" Type="String" />
+            <Parameter Name="HoTen" Mode="In" Type="String" />
+            <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+            <Parameter Name="GioiTinh" Mode="In" Type="String" />
+            <Parameter Name="SDT" Mode="In" Type="String" />
+            <Parameter Name="CCCD" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="MaCanHo" Mode="In" Type="String" />
+            <Parameter Name="LoaiHopDong" Mode="In" Type="String" />
+            <Parameter Name="GiaTriHopDong" Mode="In" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QL_CHUNGCUModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        <ComplexType Name="sp_TaoHoaDonMoi_Result">
+          <Property Type="String" Name="MaHD" Nullable="false" MaxLength="10" />
+          <Property Type="Decimal" Name="TongTien" Nullable="true" Precision="18" Scale="2" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1009,6 +1104,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="LICH_SU_SUCO">
+            <EntityTypeMapping TypeName="QL_CHUNGCUModel.LICH_SU_SUCO">
+              <MappingFragment StoreEntitySet="LICH_SU_SUCO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MaSC" ColumnName="MaSC" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="NgayHoanThanh" ColumnName="NgayHoanThanh" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="NGUOI_O">
             <EntityTypeMapping TypeName="QL_CHUNGCUModel.NGUOI_O">
               <MappingFragment StoreEntitySet="NGUOI_O">
@@ -1093,30 +1199,19 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="crs_KiemTraTheXeHetHan" FunctionName="QL_CHUNGCUModel.Store.crs_KiemTraTheXeHetHan" />
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QL_CHUNGCUModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QL_CHUNGCUModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QL_CHUNGCUModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QL_CHUNGCUModel.Store.sp_helpdiagramdefinition">
+          <FunctionImportMapping FunctionImportName="sp_CapNhatTrangThaiHoaDon" FunctionName="QL_CHUNGCUModel.Store.sp_CapNhatTrangThaiHoaDon" />
+          <FunctionImportMapping FunctionImportName="sp_ChuyenCanHo" FunctionName="QL_CHUNGCUModel.Store.sp_ChuyenCanHo" />
+          <FunctionImportMapping FunctionImportName="sp_GhiNhanSuCo" FunctionName="QL_CHUNGCUModel.Store.sp_GhiNhanSuCo" />
+          <FunctionImportMapping FunctionImportName="sp_TangGiaTriHopDongBangCursor" FunctionName="QL_CHUNGCUModel.Store.sp_TangGiaTriHopDongBangCursor" />
+          <FunctionImportMapping FunctionImportName="sp_TaoHoaDonMoi" FunctionName="QL_CHUNGCUModel.Store.sp_TaoHoaDonMoi">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="QL_CHUNGCUModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
+              <ComplexTypeMapping TypeName="QL_CHUNGCUModel.sp_TaoHoaDonMoi_Result">
+                <ScalarProperty Name="MaHD" ColumnName="MaHD" />
+                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QL_CHUNGCUModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QL_CHUNGCUModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QL_CHUNGCUModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QL_CHUNGCUModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_ThemCuDanVaoCanHo" FunctionName="QL_CHUNGCUModel.Store.sp_ThemCuDanVaoCanHo" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

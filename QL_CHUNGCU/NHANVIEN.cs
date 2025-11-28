@@ -17,6 +17,7 @@ namespace QL_CHUNGCU
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHANVIEN()
         {
+            this.LICH_SU_SUCO = new HashSet<LICH_SU_SUCO>();
             this.SUCOes = new HashSet<SUCO>();
             this.THANH_TOAN = new HashSet<THANH_TOAN>();
         }
@@ -29,6 +30,8 @@ namespace QL_CHUNGCU
         public Nullable<decimal> Luong { get; set; }
         public Nullable<System.DateTime> NgayVaoLam { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LICH_SU_SUCO> LICH_SU_SUCO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SUCO> SUCOes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

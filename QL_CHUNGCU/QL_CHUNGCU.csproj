@@ -44,9 +44,20 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +67,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CANHO.cs">
@@ -67,8 +79,23 @@
     <Compile Include="CU_DAN.cs">
       <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
     </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="DICHVU.cs">
       <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\ThongKeDanCuTheoBlockDTO.cs" />
+    <Compile Include="DTO\ThongKeDanCuTheoTangDTO.cs" />
+    <Compile Include="DTO\TongQuanDTO.cs" />
+    <Compile Include="FrmBaoCaoSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBaoCaoSuCo.Designer.cs">
+      <DependentUpon>FrmBaoCaoSuCo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCanHo.cs">
       <SubType>Form</SubType>
@@ -87,6 +114,18 @@
     </Compile>
     <Compile Include="FrmCuDan.Designer.cs">
       <DependentUpon>FrmCuDan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDashboardAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDashboardAdmin.Designer.cs">
+      <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDashboardCuDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDashboardCuDan.Designer.cs">
+      <DependentUpon>FrmDashboardCuDan.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHopDong.cs">
       <SubType>Form</SubType>
@@ -112,11 +151,53 @@
     <Compile Include="FrmLichSuHopDong.Designer.cs">
       <DependentUpon>FrmLichSuHopDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLichSuSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLichSuSuCo.Designer.cs">
+      <DependentUpon>FrmLichSuSuCo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNguoiO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmNguoiO.Designer.cs">
       <DependentUpon>FrmNguoiO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhanVien.Designer.cs">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSuCo.Designer.cs">
+      <DependentUpon>FrmSuCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTaiKhoan.Designer.cs">
+      <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThongKeDanCu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongKeDanCu.Designer.cs">
+      <DependentUpon>FrmThongKeDanCu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmThongKeSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThongKeSuCo.Designer.cs">
+      <DependentUpon>FrmThongKeSuCo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTongQuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTongQuan.Designer.cs">
+      <DependentUpon>FrmTongQuan.cs</DependentUpon>
     </Compile>
     <Compile Include="HOADON.cs">
       <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
@@ -125,6 +206,9 @@
       <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
     </Compile>
     <Compile Include="LICH_SU_CANHO.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LICH_SU_SUCO.cs">
       <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
     </Compile>
     <Compile Include="NGUOI_O.cs">
@@ -152,6 +236,9 @@
     </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs" />
     <Compile Include="sp_helpdiagrams_Result.cs" />
+    <Compile Include="sp_TaoHoaDonMoi_Result.cs">
+      <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
+    </Compile>
     <Compile Include="SUCO.cs">
       <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
     </Compile>
@@ -167,11 +254,23 @@
     <Compile Include="XE.cs">
       <DependentUpon>QL_CHUNGCU.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBaoCaoSuCo.resx">
+      <DependentUpon>FrmBaoCaoSuCo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCanHo.resx">
       <DependentUpon>FrmCanHo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCuDan.resx">
       <DependentUpon>FrmCuDan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDashboardAdmin.resx">
+      <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDashboardCuDan.resx">
+      <DependentUpon>FrmDashboardCuDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHopDong.resx">
       <DependentUpon>FrmHopDong.cs</DependentUpon>
@@ -182,8 +281,29 @@
     <EmbeddedResource Include="FrmLichSuHopDong.resx">
       <DependentUpon>FrmLichSuHopDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLichSuSuCo.resx">
+      <DependentUpon>FrmLichSuSuCo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNguoiO.resx">
       <DependentUpon>FrmNguoiO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhanVien.resx">
+      <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSuCo.resx">
+      <DependentUpon>FrmSuCo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTaiKhoan.resx">
+      <DependentUpon>FrmTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongKeDanCu.resx">
+      <DependentUpon>FrmThongKeDanCu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThongKeSuCo.resx">
+      <DependentUpon>FrmThongKeSuCo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTongQuan.resx">
+      <DependentUpon>FrmTongQuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -193,6 +313,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -216,6 +337,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\user-avatar.png" />
+    <Content Include="Images\user1.gif" />
+    <Content Include="Images\user_DangKy.gif" />
+    <Content Include="Images\user_DangKy1.gif" />
+    <Content Include="Images\user_DangNhap.jpg" />
+    <Content Include="Images\user_QuenMatKhau.gif" />
     <Content Include="QL_CHUNGCU.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QL_CHUNGCU.edmx</DependentUpon>

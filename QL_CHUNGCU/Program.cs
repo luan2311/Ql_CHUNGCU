@@ -1,4 +1,5 @@
-﻿using System;
+﻿using form_DangNhap_DangKy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace QL_CHUNGCU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLichSuChuyenCanHo());
+            Application.Run(new DangNhap());
         }
     }
 }

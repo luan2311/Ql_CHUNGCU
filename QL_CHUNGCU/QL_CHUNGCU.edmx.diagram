@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a2e09c7d74f6463eabc3f2f7b09d9fb7" Name="Diagram1" ZoomLevel="109">
+      <Diagram DiagramId="01b19fe89121469d999f21da04dd3daf" Name="Diagram1">
         <EntityTypeShape EntityType="QL_CHUNGCUModel.CANHO" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_CHUNGCUModel.CT_HOADON" Width="1.5" PointX="7.5" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_CHUNGCUModel.CU_DAN" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
@@ -12,13 +12,14 @@
         <EntityTypeShape EntityType="QL_CHUNGCUModel.HOADON" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_CHUNGCUModel.HOPDONG" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_CHUNGCUModel.LICH_SU_CANHO" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHUNGCUModel.LICH_SU_SUCO" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_CHUNGCUModel.NGUOI_O" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHUNGCUModel.NHANVIEN" Width="1.5" PointX="3.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHUNGCUModel.NHANVIEN" Width="1.5" PointX="3.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_CHUNGCUModel.SU_DUNG_DV" Width="1.5" PointX="6" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHUNGCUModel.SUCO" Width="1.5" PointX="6" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHUNGCUModel.TAIKHOAN" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHUNGCUModel.SUCO" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHUNGCUModel.TAIKHOAN" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QL_CHUNGCUModel.THANH_TOAN" Width="1.5" PointX="10.5" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QL_CHUNGCUModel.XE" Width="1.5" PointX="3" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_CHUNGCUModel.XE" Width="1.5" PointX="3" PointY="23.125" IsExpanded="true" />
         <AssociationConnector Association="QL_CHUNGCUModel.FK__HOPDONG__MaCanHo__173876EA" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHUNGCUModel.FK__NGUOI_O__MaCanHo__37A5467C" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHUNGCUModel.FK__SU_DUNG_D__MaCan__1ED998B2" ManuallyRouted="false" />
@@ -31,6 +32,8 @@
         <AssociationConnector Association="QL_CHUNGCUModel.FK__SU_DUNG_DV__MaDV__1FCDBCEB" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHUNGCUModel.FK__HOADON__MaHDong__22AA2996" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHUNGCUModel.FK__THANH_TOAN__MaHD__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CHUNGCUModel.FK__LICH_SU_SU__MaNV__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_CHUNGCUModel.FK__LICH_SU_SU__MaSC__4316F928" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHUNGCUModel.FK__SUCO__MaNV__2A4B4B5E" ManuallyRouted="false" />
         <AssociationConnector Association="QL_CHUNGCUModel.FK__THANH_TOA__Nguoi__34C8D9D1" ManuallyRouted="false" />
       </Diagram>

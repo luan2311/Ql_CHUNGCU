@@ -14,6 +14,12 @@ namespace QL_CHUNGCU
     
     public partial class SUCO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SUCO()
+        {
+            this.LICH_SU_SUCO = new HashSet<LICH_SU_SUCO>();
+        }
+    
         public string MaSC { get; set; }
         public string MaCanHo { get; set; }
         public string MaNV { get; set; }
@@ -22,6 +28,8 @@ namespace QL_CHUNGCU
         public string TrangThai { get; set; }
     
         public virtual CANHO CANHO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LICH_SU_SUCO> LICH_SU_SUCO { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }
